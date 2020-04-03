@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane fx:id="mainBorderPane" xmlns:fx="http://javafx.com/fxml/1"   fx:controller="com.example.todolist.MainController" >
+    <top>
+        <MenuBar>
+            <Menu text="File" >
+                <items>
+                 <MenuItem text="New.."  onAction="#showNewItemDialog" />
+                 <SeparatorMenuItem/>
+                 <MenuItem text="Exit" onAction="#onExit" />   
+                </items>
+            </Menu>
+        </MenuBar>
+    </top>
+    <left>
+        <ListView fx:id="todoListView"  >
+            
+        </ListView>
+    </left>
+    <center>
+        <VBox style="-fx-background-color: white" >
+                    <TextArea fx:id="itemDetailsTextArea" VBox.vgrow="ALWAYS" wrapText="true"  />
+                    <HBox >
+                        <Label text="Due : " style="-fx-background-color: white " >
+                            <font>
+                                <javafx.scene.text.Font name="Times New Roman bold" size="20" />
+                            </font>
+                        </Label>
+                        <Label fx:id="deadLineLabel" style="-fx-background-color: white" >
+                            <font>
+                                <javafx.scene.text.Font name="Times New Roman bold" size="20" />
+                                
+                            </font>
+                        </Label>
+                        <ToggleButton fx:id="filterToggleButton" text="Today's Item" onAction="#handleFilterButton" >
+                            <tooltip>
+                                <Tooltip text="Button Down : Show Today's Items only , Button Up Show all items" />
+                            </tooltip>
+                        </ToggleButton>
+                        
+                    </HBox>
+        </VBox>
+    </center>
+</BorderPane>
